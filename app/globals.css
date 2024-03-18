@@ -2,32 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl
 }
 
-@media (prefers-color-scheme: dark) {
+h2 {
+  @apply scroll-m-20 border-b pt-2 pb-2 text-3xl font-semibold tracking-tight
+}
+
+h3 {
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight
+}
+
+h4 {
+  @apply scroll-m-20 text-xl font-semibold tracking-tight
+}
+
+p {
+  @apply leading-7 pb-1 [&:not(:first-child)]:mt-3
+}
+
+main a {
+  @apply text-primary underline
+}
+
+blockquote {
+  @apply mt-2 border-l-2 pl-6 italic
+}
+
+ul {
+  @apply my-6 ml-6 list-disc [&>li]:mt-2 [&>li>ul]:my-0
+}
+
+code.inlinecode {
+  @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold
+}
+
+table {
+  @apply my-6 w-full overflow-y-auto
+
+}
+
+tr {
+  @apply m-0 border-t p-0 even:bg-muted
+}
+
+th {
+  @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right
+}
+
+td {
+  @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right
+}
+
+.hoverButton {
+  @apply w-10 h-10 p-2 rounded-md my-0.5 bg-gray-50 hover:bg-gray-200 ring-1 ring-gray-300
+}
+
+
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 170 100% 99%;
+    --foreground: 222 47% 11%;
+
+    --card: 240 100% 99%;
+    --card-foreground: 229 84% 5%;
+
+    --popover: 240 100% 99%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 205 50% 23%;
+    --primary-foreground: 214 100% 97%;
+
+    --secondary: 210 40% 90%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 222 47% 11%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 216 71% 23%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 196 100% 31%;
+    --foreground: 196 100% 62%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 196 100% 31%;
+    --primary-foreground: 196 100% 31%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
