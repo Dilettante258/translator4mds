@@ -10,6 +10,8 @@ import * as React from "react";
 import {CheckCircle, Copy} from "@phosphor-icons/react";
 import {useCopyToClipboard} from "@/lib/hooks/use-copy-to-clipboard";
 import {toast} from "@/components/ui/use-toast";
+import rehypeRaw from 'rehype-raw'
+
 
 const MemoizedReactMarkdown: FC<Options> = memo(
   ReactMarkdown,
@@ -47,7 +49,7 @@ export function ShowMarkdown({ renderer }: { renderer: string})  {
       </button>
       <MemoizedReactMarkdown
         remarkPlugins={[remarkGfm, remarkMath]}
-        rehypePlugins={[rehypeKatex]}
+        rehypePlugins={[rehypeKatex,rehypeRaw]}
         components={{
           code(props) {
             const {children, className, node, ...rest} = props

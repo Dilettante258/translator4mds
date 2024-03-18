@@ -1,59 +1,55 @@
-const text = `# Feature highlights..占位文字
+const text = `
+# Translator4mds
 
-*   [x] **[safe][section-security] by default**
-    (no \`dangerouslySetInnerHTML\` or XSS attacks)
-*   [x] **[components][section-components]**
-    (pass your own component to use instead of \`<h2>\` for \`## hi\`)
-*   [x] **[plugins][section-plugins]**
-    (many plugins you can pick and choose from)
-*   [x] **[compliant][section-syntax]**
-    (100% to CommonMark, 100% to GFM with a plugin)
+一个专门翻译[Markdown](https://markdown.com.cn/basic-syntax/)文件的应用（当然也能翻译其他的），目前支持调用微软Azure翻译的API和OpenAI GPT-3.5的API来翻译。
 
-## Contents
+## 🚀 关于
+最近正在学习全栈开发，这是为了练习前端开发技能而写的一个网站。
 
-*   [What is this?](#what-is-this)
-*   [When should I use this?](#when-should-i-use-this)
-*   [Install](#install)
-*   [Use](#use)
-*   [API](#api)
-    *   [\`Markdown\`](#markdown)
-    *   [\`defaultUrlTransform(url)\`](#defaulturltransformurl)
-    *   [\`AllowElement\`](#allowelement)
-    *   [\`Components\`](#components)
-    *   [\`ExtraProps\`](#extraprops)
-    *   [\`Options\`](#options)
-    *   [\`UrlTransform\`](#urltransform)
 
-## What is this?
+## 🗺️路线图
 
-This package is a [React][] component that can be given a string of markdown
-that it’ll safely render to React elements.
-You can pass plugins to change how markdown is transformed and pass components
-that will be used instead of normal HTML elements.
+- [ ] 增加夜间模式
+- [ ] 增加更多API的支持
+- [ ] 将面板上目前disabled的功能补全
+- [ ] 消息流式处理，不再傻等
+- [ ] 表格翻译
 
-*   to learn markdown, see this [cheatsheet and tutorial][commonmark-help]
-*   to try out \`react-markdown\`, see [our demo][demo]
+## 💻🛠️技术栈
 
-\`js\`
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Axios](https://www.axios-http.cn/)
+- [OpenAI API](https://platform.openai.com/overview)
 
-\`\`\`c
-#include <stdio.h>
+## 🙏致谢
+
+- 网站托管服务商[Vercel](https://vercel.com/)
+- 设计参考[openai-translator](https://github.com/LanceMoe/openai-translator)
+- 设计参考[vercel/ai-chatbot](https://github.com/vercel/ai-chatbot)
+- 使用[Tailwind CSS](https://tailwindcss.com/)设计样式
+- [Shadcn/ui](https://ui.shadcn.com/)的无头原生组件
+- 来自[Phosphor Icons](https://phosphoricons.com/)的图标
+- [react-markdown](https://github.com/remarkjs/react-markdown)渲染Md。
+
+## ⬇️🔧安装
+
+使用 npm 安装 my-project
+
+\`\`\`bash
+  npm install
+  npm run dev
 \`\`\`
 
+## 🌍⚙️环境变量
 
-## When should I use this?
+要运行这个项目，你将需要在你的 .env 文件中添加以下环境变量
 
-There are other ways to use markdown in React out there so why use this one?
-The three main reasons are that they often rely on \`dangerouslySetInnerHTML\`,
-have bugs with how they handle markdown, or don’t let you swap elements for
-components.
-\`react-markdown\` builds a virtual DOM, so React only replaces what changed,
-from a syntax tree.
-That’s supported because we use [unified][], specifically [remark][] for
-markdown and [rehype][] for HTML, which are popular tools to transform content
-with plugins.
+\`OPENAI_API_KEY\`
 
-$$x^2+1=5$$
+\`OPENAI_API_URL\`
+
+
 `
 
 export default text;

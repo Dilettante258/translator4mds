@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Translator4mds
 
-First, run the development server:
+一个专门翻译[Markdown](https://markdown.com.cn/basic-syntax/)文件的应用（当然也能翻译其他的），目前支持调用微软Azure翻译的API和OpenAI GPT-3.5的API来翻译。
+
+## 🚀 关于
+最近正在学习全栈开发，这是为了练习前端开发技能而写的一个网站。
+
+
+## 🗺️路线图
+
+- [ ] 增加夜间模式
+- [ ] 增加更多API的支持
+- [ ] 将面板上目前disabled的功能补全
+- [ ] 消息流式处理，不再傻等
+- [ ] 表格翻译
+
+## 💻🛠️技术栈
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Axios](https://www.axios-http.cn/)
+- [OpenAI API](https://platform.openai.com/overview)
+
+## 🙏致谢
+
+- 网站托管服务商[Vercel](https://vercel.com/)
+- 设计参考[openai-translator](https://github.com/LanceMoe/openai-translator)
+- 设计参考[vercel/ai-chatbot](https://github.com/vercel/ai-chatbot)
+- 使用[Tailwind CSS](https://tailwindcss.com/)设计样式
+- [Shadcn/ui](https://ui.shadcn.com/)的无头原生组件
+- 来自[Phosphor Icons](https://phosphoricons.com/)的图标
+- [react-markdown](https://github.com/remarkjs/react-markdown)渲染Md。
+
+
+## ⬇️🔧安装
+
+使用 npm 安装 my-project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  npm install
+  npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌍⚙️环境变量
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+要运行这个项目，你将需要在你的 .env 文件中添加以下环境变量
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+`OPENAI_API_KEY`
 
-## Learn More
+`OPENAI_API_URL`
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
